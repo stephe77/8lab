@@ -1,0 +1,33 @@
+POST /v1/comments HTTP/1.1
+Host: 127.0.0.1:8000
+
+{"name":"sdfdd","age":34, "apiKey": 123}
+
+###
+
+GET /v1/stats HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
+
+
+GET /v2/comments HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
+
+POST /v2/comments HTTP/1.1
+Host: 127.0.0.1:5500
+content-type: application/json
+
+{
+    "name":"ayx",
+    "text":"tagtest",
+    "data":25.11
+}
+
+###
+GET /v2/comments/64870365af16ba6ca8fbdbcf HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
