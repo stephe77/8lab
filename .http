@@ -1,7 +1,7 @@
-POST /v1/comments HTTP/1.1
-Host: 127.0.0.1:8000
+# POST /v1/comments HTTP/1.1
+# Host: 127.0.0.1:8000
 
-{"name":"sdfdd","age":34, "apiKey": 123}
+# {"name":"sdfdd","age":34, "apiKey": 123}
 
 ###
 
@@ -21,13 +21,85 @@ Host: 127.0.0.1:5500
 content-type: application/json
 
 {
-    "name":"ayx",
+    "name":"ayxan",
     "text":"tagtest",
     "data":25.11
 }
 
-###
+### 
+
 GET /v2/comments/64870365af16ba6ca8fbdbcf HTTP/1.1
+Host: 127.0.0.1:5500
+
+#####################################################################
+
+### POST в apikeys
+
+POST /v2/api HTTP/1.1
+Host: 127.0.0.1:5500
+content-type: application/json
+
+{
+    "name":"testnameayxan",
+    "key":""
+}
+
+### DELETE из apikeys
+
+DELETE /v2/api/9eef7ef799d49a79 HTTP/1.1
+Host: 127.0.0.1:5500
+
+###
+
+### POST в models
+
+POST /v2/models?key=8ce408d58c353d8a HTTP/1.1
+Host: 127.0.0.1:5500
+content-type: application/json
+
+{
+    "name":"testname546546456",
+    "modelname":"1",
+    "modeltype":"1",
+    "object":"testobj",
+    "description":"testdesc",
+    "comments":"testcomm",
+    "data":25.11,
+    "datachange":22.10
+}
+
+### DELETE из models
+
+DELETE /v2/models/648786e64b83047d5c50ad52?key=8ce408d58c353d8a HTTP/1.1
+key: 8ce408d58c353d8a
+Host: 127.0.0.1:5500
+
+### PUT в models
+
+PUT  /v2/models/6487a1c84b83047d5c50ad5c?key=8ce408d58c353d8a HTTP/1.1
+# api: eaaa9f80-f414-41d5-b0c3-13effc8e8dcc
+Host: 127.0.0.1:5500
+Content-Type: application/json
+
+{
+    "name":"2224344testname546546456",
+    "modelname":"1",
+    "modeltype":"1",
+    "object":"testobj",
+    "description":"testdesc",
+    "comments":"testcomm",
+    "data":25.11,
+    "datachange":22.10
+}
+
+### GET в models
+
+GET /v2/models?key=8ce408d58c353d8a HTTP/1.1
+Host: 127.0.0.1:5500
+
+### GET в models по ID
+
+GET /v2/models/6487a6304b83047d5c50ad7a?key=8ce408d58c353d8a HTTP/1.1
 Host: 127.0.0.1:5500
 
 ###

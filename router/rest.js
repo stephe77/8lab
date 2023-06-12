@@ -12,8 +12,8 @@ function validation(req, res, next){
 }
 
 function checkAuthorization(req, res, next){
-	const apiKey = req.query.key;
-	if (apiKey !== '123'){
+	const key = req.query.key;
+	if (key !== '123'){
 		next(err);
 	}
 	else next();

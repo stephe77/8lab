@@ -18,6 +18,12 @@ app.listen(PORT, HOST, () => {
   console.log(`Сервер запущен http://${HOST}:${PORT}`);
 });
 
+app.use(function (err, req, res, next) {
+	const statusCode = err.statusCode || 500;
+	const message = err.message || "Internal server error";
+	res.status(statusCode).json({ message: message });
+});
+
 app.use((req, res, next) =>{
   res.status(400).send('Такой страницы не существует!');
 });
